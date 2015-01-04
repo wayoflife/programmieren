@@ -7,6 +7,7 @@ public class Krankenwagen extends Auto{
 	
 	public Krankenwagen() {
 		// TODO Auto-generated constructor stub
+		super();
 	}
 
 
