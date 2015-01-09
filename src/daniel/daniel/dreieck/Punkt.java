@@ -24,7 +24,7 @@ public class Punkt {
 
 	public void rotate(double winkel) {
 		double radius = Math.sqrt(x * x + y * y);
-		this.x = radius * Math.sin(winkel);
-		this.y = radius * Math.cos(winkel);
+		this.x = radius * Math.cos(winkel);
+		this.y = radius * Math.sin(winkel);
 	}
 }
