@@ -16,14 +16,15 @@ public class Punkt {
 	public double getY() {
 		return y;
 	}
-	
-	public void verschieben(double x, double y){
+
+	public void verschieben(double x, double y) {
 		this.x += x;
 		this.y += y;
 	}
 
 	public void rotate(double winkel) {
-		this.x = x * Math.sin(winkel);
-		this.y = y * Math.cos(winkel);
+		double radius = Math.sqrt(x * x + y * y);
+		this.x = radius * Math.sin(winkel);
+		this.y = radius * Math.cos(winkel);
 	}
 }
