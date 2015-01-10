@@ -81,8 +81,7 @@ public class Auktion {
 	}
 
 	public boolean beendet() {
-		if(Calendar.getInstance().after(ende)) return true;
-		return false;
+		return Calendar.getInstance().after(ende);
 	}
 	
 	public String getTitel(){
