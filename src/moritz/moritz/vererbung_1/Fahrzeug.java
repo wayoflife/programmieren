@@ -1,30 +1,29 @@
 package moritz.vererbung_1;
 
 public class Fahrzeug {
-	double position;
+	private double position;
 	double geschwindigkeit;
 	double maximalgeschwindigkeit;
 	int raeder;
 
 	public Fahrzeug() {
 		// TODO Auto-generated constructor stub
-		this.maximalgeschwindigkeit=0;
-		this.raeder=0;
+		this.maximalgeschwindigkeit = 0;
+		this.raeder = 0;
 	}
 
 	public Fahrzeug(double position, double geschwindigkeit,
 			double maximalgeschwindigkeit, int raeder) {
-		this.position=position;
-		this.geschwindigkeit=geschwindigkeit;
-		this.maximalgeschwindigkeit=0;
-		this.raeder=0;
+		this.position = position;
+		this.geschwindigkeit = geschwindigkeit;
+		this.maximalgeschwindigkeit = maximalgeschwindigkeit;
+		this.raeder = 0;
 
 	}
 
 	public void bewege(double minuten) {
 		if (geschwindigkeit != 0) {
 			position = position + ((geschwindigkeit / 60) * minuten);
-		} else {
 		}
 	}
 
@@ -51,7 +50,7 @@ public class Fahrzeug {
 				+ " km/h fahren. \n";
 		erg += "Seine aktuelle Geschwindigkeit betraegt " + geschwindigkeit
 				+ " km/h. \n";
-		erg+= "Es hat bisher " + this.position + " km/h zurückgelegt.";
+		erg += "Es hat bisher " + this.position + " km/h zurückgelegt.";
 
 		return erg;
 	}

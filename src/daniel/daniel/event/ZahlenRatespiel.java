@@ -21,7 +21,7 @@ public class ZahlenRatespiel extends JFrame {
 	
 	private JLabel lblname, lblzahl;
 	private JTextField txtname, txtzahl, txtanzeige;
-	private JButton btneu, btnok, btnbester, btnexit;
+	private JButton btnneu, btnok, btnbester, btnexit;
 	
 	public ZahlenRatespiel() {
 		super("Zahlen Ratespiel");
@@ -45,9 +45,9 @@ public class ZahlenRatespiel extends JFrame {
 		
 		JPanel pnlbuttons = new JPanel();
 		this.add(pnlbuttons);
-		btneu = new JButton("neu");
-		pnlbuttons.add(btneu);
-		btneu.addActionListener(new ActionListener() {
+		btnneu = new JButton("neu");
+		pnlbuttons.add(btnneu);
+		btnneu.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {

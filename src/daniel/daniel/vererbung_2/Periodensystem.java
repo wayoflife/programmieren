@@ -31,8 +31,9 @@ public class Periodensystem {
 	}
 	
 	public boolean hasElement(int oz){
-		if(this.elemente[oz] != null) return true;
-		return false;
+//		if(this.elemente[oz] != null) return true;
+//		return false;
+		return this.elemente[oz] != null;
 	}
 	
 	public Element getElement(int oz){
