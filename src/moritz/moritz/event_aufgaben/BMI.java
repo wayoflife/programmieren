@@ -15,10 +15,10 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
 public class BMI extends JFrame {
-	JTextField txtbmi, txtdiagnose, txtgewicht, txtgroesse;
-	JLabel lblgewicht, lblgroesse;
-	JRadioButton rbtman, rbtwoman;
-	JButton btberechne;
+	private JTextField txtbmi, txtdiagnose, txtgewicht, txtgroesse;
+	private JLabel lblgewicht, lblgroesse;
+	private JRadioButton rbtman, rbtwoman;
+	private JButton btberechne;
 
 	public double berechneBMI(double gewicht, double groesseincm) {
 		double bmi = 0.0;
@@ -102,8 +102,7 @@ public class BMI extends JFrame {
 					if (bmi > 40) {
 						txtdiagnose.setText("massive Adipositas!");
 					}
-				}
-				if (rbtwoman.isSelected()) {
+				} else {
 					if (bmi < 19) {
 						txtdiagnose.setText("Untergewicht!");
 					}
