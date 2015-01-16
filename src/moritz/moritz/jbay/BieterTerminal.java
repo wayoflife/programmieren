@@ -26,7 +26,22 @@ public class BieterTerminal extends JFrame {
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		ah.registerTerminal(this);
 		update();
-
+		
+		new Thread(){
+			public void run(){
+				while(true){
+					uhrzeit.setText(Calendar.getInstance().getTime().toString());
+					try {
+						Thread.sleep(1000);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+			}
+		}.start();
+		
+		
 		this.setVisible(true);
 	}
 

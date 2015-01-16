@@ -1,5 +1,7 @@
 package moritz.jbay;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Calendar;
 
 public class Auktion {
@@ -36,6 +38,20 @@ public class Auktion {
 	}
 
 	public boolean gebotAbgeben(Gebot g) {
+		FileWriter fw;
+		try {
+			fw = new FileWriter("gebote.txt", true);
+			fw.write("[" + Calendar.getInstance().getTime().toString() + "]"
+					+ " Gebot von " + g.getBieter().getFullName()
+					+ " für " + this.ware.titel + " "
+					+ g.getHoechstbetrag() + " Euro." + "\n");
+			fw.close();
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+
 		if (g.getHoechstbetrag() < aktuellerPreis + INCREMENT) {
 			return false;
 		}
@@ -63,15 +79,16 @@ public class Auktion {
 		return false;
 
 	}
-	
-	Auktion(Ware ware, int dauer){
-		this.ware=ware;
+
+	Auktion(Ware ware, int dauer) {
+		this.ware = ware;
 		endeAuktion = Calendar.getInstance();
-		endeAuktion.setTimeInMillis(System.currentTimeMillis() + dauer*60*1000);
+		endeAuktion.setTimeInMillis(System.currentTimeMillis() + dauer * 60
+				* 1000);
 	}
 
 	public String getFullName() {
-		if(gebot==null){
+		if (gebot == null) {
 			return "---";
 		}
 		return gebot.getBieter().getFullName();
