@@ -2,9 +2,9 @@ package laura.vererbung_1;
 
 public class Fahrzeug {
 	private double position;
-	double geschwindigkeit;
-	double maxgeschwindigkeit;
-	int raeder;
+	private double geschwindigkeit;
+	private double maxgeschwindigkeit;
+	private int raeder;
 		
 	public Fahrzeug(double position, double geschwindigkeit,
 			double maxgeschwindigkeit, int raeder) {
@@ -14,10 +14,6 @@ public class Fahrzeug {
 		this.maxgeschwindigkeit = maxgeschwindigkeit;
 		this.raeder = raeder;
 	}
-
-
-
-
 
 
 	public void bewege(double min){
@@ -42,9 +38,13 @@ public class Fahrzeug {
 		return raeder;
 	}
 	
+	public void setMaxgeschwindigkeit(double maxgeschwindigkeit) {
+		this.maxgeschwindigkeit = maxgeschwindigkeit;
+	}
+	
 	public String toString(){
 		String info =
-		"\n Fahrzeugtyp:" + this.getClass().getSimpleName()
+		"\n Fahrzeugtyp: " + this.getClass().getSimpleName()
 			+ "\n Aktuelle Position des Fahrzeugs: " + this.position 
 			+ "\n Aktuelle Geschwindigkeit des Fahrzeugs: " + geschwindigkeit 
 			+"\n Maximale Geschwindigkeit des Fahrzeugs: "+ maxgeschwindigkeit 
