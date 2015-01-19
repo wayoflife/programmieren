@@ -70,6 +70,27 @@ public class QueueDisplay extends JFrame implements QueueObserver {
 		wq.addQueueObserver(this);
 		this.queue = wq;
 		
+		new Thread(){
+			public void run(){
+				while(true){
+					if(queue.getcurrentCalls().size()>1){
+					int call =(int)	(Math.random()*queue.getcurrentCalls().size());
+					Call temp = queue.getcurrentCalls().get(call);
+					lblletzteraufruf.setText(temp.toString());
+					}
+					
+					
+					try {
+						Thread.sleep(1000*5);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					
+				}
+			}
+		}.start();
+		
 
 		erstelleGUI();
 		updateView();
@@ -87,12 +108,13 @@ public class QueueDisplay extends JFrame implements QueueObserver {
 
 		this.setVisible(true);
 
+		
+		
+		
+		
 	}
 
-	public static void main(String[] args) {
-		WaitingQueue wq = new WaitingQueue();
+	
 
-		new QueueDisplay(wq);
-	}
 
 }
